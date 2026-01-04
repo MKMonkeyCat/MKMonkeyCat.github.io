@@ -1,4 +1,4 @@
-export const githubUserName = 'a3510377';
+export const githubUserName = 'MKMonkeyCat';
 
 export default {
   githubUserName,
