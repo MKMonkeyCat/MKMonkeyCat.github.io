@@ -83,6 +83,10 @@
   const year = new Date().getFullYear();
 </script>
 
+<svelte:head>
+  <title>{profile.name}</title>
+</svelte:head>
+
 <main>
   <div class="bg-glow"></div>
   <header class="anime-card header-section">

@@ -10,7 +10,7 @@ export default {
     adapter: adapter({
       pages: 'build',
       assets: 'build',
-      fallback: null,
+
       precompress: false,
     }),
   },
