@@ -1,0 +1,158 @@
+:root {
+  --bg-color: #050505;
+  --text-color: #e0e0e0;
+  --accent-color: #00f3ff;
+  --secondary-color: #ff00ff;
+  --card-bg: #ffffff08;
+  --border-color: #ffffff1a;
+  --glass-blur: 12px;
+
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    sans-serif;
+  line-height: 1.6;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+  background-image: radial-gradient(
+      circle at 10% 20%,
+      #00f3ff0d 0%,
+      transparent 40%
+    ),
+    radial-gradient(circle at 90% 80%, #ff00ff0d 0%, transparent 40%);
+  background-attachment: fixed;
+}
+
+main {
+  max-width: 65rem;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 2rem 1rem;
+  }
+}
+
+.anime-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 600px) {
+  .anime-card {
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+}
+
+.anime-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.05),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.anime-card:hover::before {
+  left: 100%;
+}
+
+.anime-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-color);
+  box-shadow: 0 10px 30px -10px #00f3ff33;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 900;
+  letter-spacing: -1px;
+  color: #fff;
+}
+
+h2 {
+  font-size: 2rem;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 600px) {
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 40px;
+  height: 4px;
+  background: var(--accent-color);
+  box-shadow: 0 0 15px var(--accent-color);
+}
+
+.tag {
+  display: inline-block;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 0.8rem;
+  margin: 4px;
+  color: var(--accent-color);
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.tag:hover {
+  background: var(--accent-color);
+  color: #000;
+  box-shadow: 0 0 15px var(--accent-color);
+}
+
+button {
+  background: linear-gradient(
+    45deg,
+    var(--accent-color),
+    var(--secondary-color)
+  );
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: 800;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 5px 15px #00f3ff4d;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px #00f3ff80;
+}
